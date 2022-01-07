@@ -17,15 +17,18 @@
 </head>
 
 <body>
-   <h1>"wow"</h1>
+    <div><h1 id = "header">"wow"</h1></div>
+   
 
     <div id="buttons">
+        <p id = "id"></p>
         <button onclick= "wow()" id="left">Left</button>
         <button onclick="woww()" id="right">Right</button>
       
     </div>
-    <button>  <span class="hop">Hey, I told you not to hover over me!</span>
-        <div class = "h">Don't hover over me</span> </button>
+    <p id = "id"></p>
+    <button>  
+        <div class = "h">Don't hover over me</div> </button>
   
     <div class="container">
         <form>
@@ -42,7 +45,7 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button onClick="onSubmit()" type="button" class="btn btn-primary">Submit</button>
         </form>
     </div>
 </body>
