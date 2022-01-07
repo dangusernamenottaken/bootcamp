@@ -1,0 +1,23 @@
+
+
+button .hop {
+    display: none;
+}
+
+button:hover .h{
+    display: none;
+}
+
+button:hover .hop {
+    display: inline;
+}
+
+#left{
+    position: absolute;
+    top: 400px; left: 40px;
+}
+
+#right{
+    position: absolute;
+    top: 400px; left: 100px;
+}
