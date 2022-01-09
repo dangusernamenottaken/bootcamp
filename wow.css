@@ -1,6 +1,6 @@
 
 
-button .hop {
+/*button .hop {
     display: none;
 }
 
@@ -11,8 +11,8 @@ button:hover .h{
 button:hover .hop {
     display: inline;
 }
-
-#left{
+*/
+/*#left{
     position: absolute;
     top: 400px; left: 40px;
 }
@@ -20,4 +20,11 @@ button:hover .hop {
 #right{
     position: absolute;
     top: 400px; left: 100px;
+}
+*/
+.rectangle {
+    height: 5px;
+    width: 10px;
+    background-color: rgb(255, 0, 0);
+
 }
