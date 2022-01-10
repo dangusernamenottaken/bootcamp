@@ -1,4 +1,8 @@
 
+.flex-container{
+    display: flex;
+  
+                              }
 .everything{
     position: absolute;
     top: 100%;
@@ -10,6 +14,7 @@
 
  
 }
+
 
 
 .buttons{
@@ -118,4 +123,6 @@ label[for=color4]{
     top: 830px;
    
 }
+
+
 

@@ -45,7 +45,7 @@ start.closePath();
 })
 let delRow = document.getElementById("deleteRow")
 console.log(delRow)
-
+r
 delRow.addEventListener("click",()=>{
     
     if(count>0){
