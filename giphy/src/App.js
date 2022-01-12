@@ -1,10 +1,12 @@
-
+import "./App.css"
 import React,{useState,useEffect} from 'react';
-
+//import SearchField from "./SearchField"
+//import GifCard_Component from "./GifCard_Component";
 
 function App() {
 const [zipCode,setZipCode] = useState("")
   const [list,setList] = useState([])
+  const [loading,setLoad] = useState(true)
   const handleChange = (event) => {
     
              setZipCode(event.target.value)
@@ -15,7 +17,7 @@ const [zipCode,setZipCode] = useState("")
      response
      .json()
      .then((data) => {
-     //console.log(data) 
+     console.log(data) 
       const wow = document.getElementById("wow")
       const bob = JSON.stringify(data)
       const arr = bob.split(",")
@@ -44,7 +46,7 @@ const [zipCode,setZipCode] = useState("")
       <header className="App-header">
       <form>
   <label>
-    Zip Code::
+    Search Gifs:
     <input 
           value = {zipCode}
           placeholder="XXXXX"
@@ -53,7 +55,7 @@ const [zipCode,setZipCode] = useState("")
   <input type="submit" value="Submit" />
 </form>
       <div id = "wow">
-       
+      
       </div>
       </header>
     </div>

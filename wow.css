@@ -1,128 +1,93 @@
-
-.flex-container{
-    display: flex;
-  
-                              }
-.everything{
-    position: absolute;
-    top: 100%;
+td {
+  background-color: aqua;
+  width: 40px;
+  height: 40px;
 }
-.container{
-   
- position: relative;
- padding: 100px 200px 28px 50px;
-
- 
+.flex-container {
+  display: flex;
 }
-
-
-
-.buttons{
-    position: absolute;
-    top: 300px;
-  
+.everything {
+  position: absolute;
+  top: 100%;
+}
+.container {
+  position: relative;
+  padding: 100px 200px 28px 50px;
 }
 
-.reset{
-    position: absolute;
-    top: 390px;
-    
-
+.buttons {
+  position: absolute;
+  top: 300px;
 }
 
-
-
-.py-1{
-
-    position: absolute;
-    top: 440px;
-    
-   
+.reset {
+  position: absolute;
+  top: 390px;
 }
 
-label[for=color1]{
-
-    position: absolute;
-    top: 480px;
-   
-   
-
+.py-1 {
+  position: absolute;
+  top: 440px;
 }
 
-#redd{
-    position: absolute;
-    top: 500px;
-    
+label[for="color1"] {
+  position: absolute;
+  top: 480px;
 }
 
-
-.py-2{
-    position: absolute;
-    top: 520px;
-    
+#redd {
+  position: absolute;
+  top: 500px;
 }
 
-label[for=color2]{
-
-    position: absolute;
-    top: 540px;
-   
+.py-2 {
+  position: absolute;
+  top: 520px;
 }
 
-#blue{
-    position: absolute;
-    top: 560px;
-    
+label[for="color2"] {
+  position: absolute;
+  top: 540px;
 }
 
-.py-3{
-    position: absolute;
-    top: 590px;
-  
-
+#blue {
+  position: absolute;
+  top: 560px;
 }
 
-label[for=color3]{
-
-    position: absolute;
-    top: 620px;
-   
-
+.py-3 {
+  position: absolute;
+  top: 590px;
 }
 
-#bluee{
-    position: absolute;
-    top: 650px;
-    
-}
-.py-4{
-    position: absolute;
-    top: 660px;
-    
+label[for="color3"] {
+  position: absolute;
+  top: 620px;
 }
 
-label[for=color4]{
-    position: absolute;
-    top: 720px;
-    
-
+#bluee {
+  position: absolute;
+  top: 650px;
+}
+.py-4 {
+  position: absolute;
+  top: 660px;
 }
 
-#green{
-    position: absolute;
-    top: 750px;
-    
-}
-.box{
-    position: absolute;
-    top: 800px;
-    
-}
-.boxx{
-    position: absolute;
-    top: 830px;
-   
+label[for="color4"] {
+  position: absolute;
+  top: 720px;
 }
 
-
-
+#green {
+  position: absolute;
+  top: 750px;
+}
+.box {
+  position: absolute;
+  top: 800px;
+}
+.boxx {
+  position: absolute;
+  top: 830px;
+}

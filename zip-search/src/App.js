@@ -16,13 +16,13 @@ function App() {
      response
      .json()
      .then((data) => {
-     //console.log(data) 
+     console.log(data) 
       const wow = document.getElementById("wow")
       const bob = JSON.stringify(data)
       const arr = bob.split(",")
       let string = '"Zipcode":"10016"'
       if(zipCode===5){
-        console.log
+        console.log(zipCode)
       }
      // wow.innerText = arr[1]
       for(let i  = 0; i < arr.length; i++){
