@@ -1,5 +1,5 @@
 
-let table = document.getElementsByTagName("table")[0]
+/*/*let table = document.getElementsByTagName("table")[0]
 //console.log(table)
 function addRow(){
 
@@ -95,6 +95,7 @@ delRow.addEventListener("click",()=>{ deleter() })
    
 
 //let table = document.getElementsByTagName("table")[0]
+/*
 let col;
 col = document.createElement("tr")
 
@@ -121,5 +122,180 @@ let rowButton = document.getElementById("roww")
 //let first = document.getElementById("myCanvas");
 //start = first.getContext("2d");
 */
-column.addEventListener("click",()=>{ addColumn()})
+//column.addEventListener("click",()=>{ addColumn()})
 
+let rowButton = document.getElementById("roww")
+//console.log(rowButton)
+//let rectArray = []
+//let x = 75
+//let first = document.getElementById("myCanvas");
+//start = first.getContext("2d");
+rowButton.addEventListener("click",()=>{
+    addRow()})
+let colNum = 3;
+let rowNum = 3;
+let selectedColor = "red";
+let mouseDown = false;
+
+const addRow = () => {
+  const content = document.getElementsByTagName("table")[0]
+  //const content = document.getElementsByTagName("table")[0]
+  const row = document.createElement("tr");
+  //let row;
+    //row = document.createElement("tr")
+  //row.className = "row";
+  for (let i = 0; i < colNum; i++) {
+    let cell = document.createElement("td")
+    row.appendChild(cell)
+    //const col = document.createElement("tr");
+    //cell.className = "col-sm";
+    cell.addEventListener("click", (event) => {
+      console.log("hey");
+      event.preventDefault();
+      cell.style.backgroundColor = selectedColor;
+    });
+
+    cell.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      mouseDown = true;
+      cell.style.backgroundColor = selectedColor;
+    });
+    cell.addEventListener("mouseup", (event) => {
+      event.preventDefault();
+      if (mouseDown) {
+        mouseDown = false;
+      }
+    });
+    cell.addEventListener("mousemove", (event) => {
+      event.preventDefault();
+      if (mouseDown) {
+        cell.style.backgroundColor = selectedColor;
+      }
+    });
+    //row.appendChild(cell);
+  }
+  content.appendChild(row);
+  rowNum++;
+  //return row
+};
+
+const setAllColors = () => {
+  const cols = document.getElementsByClassName("box");
+  for (let i = 0; i < cols.length; i++) {
+    if (cols[i].style.backgroundColor === "white") {
+      cols[i].style.backgroundColor = selectedColor;
+    }
+  }
+};
+
+const setAll = () => {
+  const cols = document.getElementsByClassName("box");
+  for (let i = 0; i < cols.length; i++) {
+    cols[i].style.backgroundColor = selectedColor;
+  }
+};
+let columns = document.getElementById("column")
+columns.addEventListener("click",()=>{
+    addCol()})
+const addCol = () => {
+    const content = document.getElementsByTagName("table")[0]
+    //const rows = document.createElement("tr");
+  const rows = document.getElementsByTagName("tr");
+  for (let i = 0; i < rows.length; i++) {
+    let cell  = document.createElement("td");
+    
+    //col.className = "col-sm border border-dark box white";
+    cell.addEventListener("click", (event) => {
+      console.log("hey");
+      event.preventDefault();
+      col.style.backgroundColor = selectedColor;
+    });
+    cell.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      mouseDown = true;
+      col.style.backgroundColor = selectedColor;
+    });
+    cell.addEventListener("mouseup", (event) => {
+      event.preventDefault();
+      if (mouseDown) {
+        mouseDown = false;
+      }
+    });
+    cell.addEventListener("mousemove", (event) => {
+      event.preventDefault();
+      if (mouseDown) {
+        col.style.backgroundColor = selectedColor;
+      }
+    });
+    rows[i].appendChild(cell);
+  }
+  colNum++;
+};
+//let delCol = document.getElementById("deleteColumn")
+//delCol.addEventListener("click",()=>{
+ //   removeCol()})
+const removeCol = () => {
+  if (colNum === 0) {
+    alert("No more columns to remove");
+  } else {
+    const rows = document.getElementsByClassName("row");
+    for (let i = 0; i < rows.length; i++) {
+      rows[i].lastElementChild.remove();
+    }
+    colNum--;
+    if (colNum === 0) {
+      rowNum = 1;
+    }
+  }
+};
+let delRow = document.getElementById("deleteRow")
+delRow.addEventListener("click",()=>{
+    removeRow()})
+const removeRow = () => {
+  if (rowNum === 0) {
+    alert("No more rows to remove");
+  } else {
+    const content = document.getElementsByTagName("table")[0]
+    console.log(content)
+    content.removeChild(content.lastElementChild);
+    rowNum--;
+    if (rowNum === 0) {
+      colNum = 1;
+    }
+  }
+};
+
+const selectColor = (colorVal) => {
+  selectedColor = colorVal;
+};
+
+const init = () => {
+  const cols = document.getElementsByClassName("box");
+  for (let i = 0; i < cols.length; i++) {
+    cols[i].style.backgroundColor = "white";
+    cols[i].addEventListener("click", (event) => {
+      console.log("hey");
+      event.preventDefault();
+      cols[i].style.backgroundColor = selectedColor;
+    });
+    cols[i].addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      mouseDown = true;
+      cols[i].style.backgroundColor = selectedColor;
+    });
+    cols[i].addEventListener("mouseup", (event) => {
+      event.preventDefault();
+      if (mouseDown) {
+        mouseDown = false;
+      }
+    });
+    cols[i].addEventListener("mousemove", (event) => {
+      event.preventDefault();
+      if (mouseDown) {
+        cols[i].style.backgroundColor = selectedColor;
+      }
+    });
+  }
+};
+
+init();
