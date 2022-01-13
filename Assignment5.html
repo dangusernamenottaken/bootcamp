@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="wow.css">
+        <script src="addrows.js" defer></script>
+</head>
+
+<body>
+    
+    <!-- Fix this so that it's not stretching from one side of the screen to the other-->
+    <div class = "everything">
+    <div class = "container">
+     
+    <div class="mt-5 content">
+        <table id = "wow"></table>
+        <div class="row">
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+            <div class="col-sm border border-dark box white"></div>
+
+        </div>
+    </div>
+
+    <!-- BUTTONS: USE FLEXBOX TO ALIGN ITEMS NEATLY-->
+   <!--- <div class = "flex-container" > -->
+    <div class="buttons">
+        <button type="button" id="roww">Add Row</button>
+        <button type="button" id="deleteRow">Delete Row</button>
+        <button type="button" id="column">Add Column</button>
+        <button type="button" class="deleteColumn">Delete Column</button>
+    </div>
+    <div class="">
+        <button type="button" class="reset" onClick="window.location.reload();">Reset Page</button>
+    </div>
+    <div class = "flex-container" >
+    <canvas id="myCanvas" >
+        </canvas>
+    </div>
+    <!-- ADD FLEXBOX TO ALIGN ITEMS in the center-->
+    <div id="bob">
+    <div class="select1">
+        <h6 class=py-1>Select from the following list and click on a box to change the color!</h6>
+        <form>
+            <label for="color1">Choose a color:</label>
+            <select name="name" id="redd">
+                <!-- Add more option values for different colors -->
+                <option value="red">Red</option>
+
+            </select>
+        </form>
+    </div>
+
+    <div class="select2">
+        <h6 class=py-2>Select a color and it will change all the <b>white</b> boxes to the color</h6>
+        <form>
+            <label for="color2">Choose a color:</label>
+            <select name="name" id="blue">
+                <!-- Add more option values for different colors -->
+                <option value="red">Red</option>
+            </select>
+            <button type="button" class='boxx'>Fill all white boxes</button>
+        </form>
+    </div>
+
+    <div class="select3">
+        <h6 class=py-3>Select a color and it will change ALL the boxes to the color</h6>
+        <form>
+            <label for="color3">Choose a color:</label>
+            <select name="name" id="bluee">
+                <!-- Add more option values for different colors -->
+                <option value="red">Red</option>
+               
+            </select>
+           
+            <button type="button" class='box'>Fill all boxes</button>
+        </form>
+    </div>
+
+    <div class="select4">
+        <h6 class=py-4>Select a color and then drag the color over the boxes to change them!</h6>
+        <form>
+            <label for="color4">Choose a color:</label>
+            <select name="name" id="green">
+                <!-- Add more option values for different colors -->
+                <option value="red">Red</option>
+            </select>
+        </form>
+    </div>
+</div>
+</div>
+<!--</div>-->
+    <!-- don't forget to add your script file -->
+</body>
+
+</html>

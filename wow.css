@@ -1,23 +1,94 @@
-
-
-button .hop {
-    display: none;
+td {
+  background-color: aqua;
+  width: 20px;
+  height: 20px;
 }
 
-button:hover .h{
-    display: none;
+.flex-container {
+  display: flex;
+}
+.everything {
+  position: absolute;
+  top: 100%;
+}
+.container {
+  position: relative;
+  padding: 100px 200px 28px 50px;
 }
 
-button:hover .hop {
-    display: inline;
+.buttons {
+  position: absolute;
+  top: 300px;
 }
 
-#left{
-    position: absolute;
-    top: 400px; left: 40px;
+.reset {
+  position: absolute;
+  top: 390px;
 }
 
-#right{
-    position: absolute;
-    top: 400px; left: 100px;
+.py-1 {
+  position: absolute;
+  top: 440px;
+}
+
+label[for="color1"] {
+  position: absolute;
+  top: 480px;
+}
+
+#redd {
+  position: absolute;
+  top: 500px;
+}
+
+.py-2 {
+  position: absolute;
+  top: 520px;
+}
+
+label[for="color2"] {
+  position: absolute;
+  top: 540px;
+}
+
+#blue {
+  position: absolute;
+  top: 560px;
+}
+
+.py-3 {
+  position: absolute;
+  top: 590px;
+}
+
+label[for="color3"] {
+  position: absolute;
+  top: 620px;
+}
+
+#bluee {
+  position: absolute;
+  top: 650px;
+}
+.py-4 {
+  position: absolute;
+  top: 660px;
+}
+
+label[for="color4"] {
+  position: absolute;
+  top: 720px;
+}
+
+#green {
+  position: absolute;
+  top: 750px;
+}
+.box {
+  position: absolute;
+  top: 800px;
+}
+.boxx {
+  position: absolute;
+  top: 830px;
 }
