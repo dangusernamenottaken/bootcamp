@@ -18,11 +18,11 @@ function App(){
     const [currentUser,setUser] = useState({ userName: 'bob_loblaw',
     memberSince: '08/23/99'})
 
-    mockLogIn = (logInInfo) => {
+    const mockLogIn = (logInInfo) => {
       const newUser = {...currentUser}
       newUser.userName = logInInfo.userName
       setUser(newUser)
-    };
+    }
  
     
    
@@ -34,8 +34,9 @@ function App(){
     return (
       <BrowserRouter>
         <Routes>
-           <Route path="/login" element={<LogIn user={currentUser} mockLogIn={mockLogIn} {...props}/>}/>
+           <Route path="/login" element={<LogIn user={currentUser} mockLogIn={mockLogIn}/>}/>
             <Route  path="/" element={<Home accountBalance={accountBalance}/>}/>
+            <Route path="/userProfile" element={<UserProfile userName={currentUser.userName} memberSince={currentUser.memberSince}  />}/>
             
         </Routes>
         </BrowserRouter>
