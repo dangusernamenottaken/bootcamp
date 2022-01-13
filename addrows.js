@@ -282,7 +282,8 @@ const selectColor = (colorVal) => {
 };
 
 const init = () => {
-  const cols = document.getElementsByTagName("td");
+  const cols = document.getElementsByIdName("bob");
+ 
   for (let i = 0; i < cols.length; i++) {
     cols[i].style.backgroundColor = "white";
     cols[i].addEventListener("click", (event) => {
