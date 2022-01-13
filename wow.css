@@ -1,7 +1,21 @@
 td {
-  background-color: aqua;
+  background-color: white;
+
   width: 20px;
   height: 20px;
+  border-style: solid;
+  border-width: medium;
+}
+#fillAll {
+  /*color: red;*/
+  position: absolute;
+  top: 800px;
+}
+
+#fillEmpty {
+  /*color: red;*/
+  position: absolute;
+  top: 830px;
 }
 
 .flex-container {
@@ -92,3 +106,4 @@ label[for="color4"] {
   position: absolute;
   top: 830px;
 }
+/* create boxes for buttons */

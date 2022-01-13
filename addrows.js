@@ -79,6 +79,8 @@ delRow.addEventListener("click",()=>{ deleter() })
 
  */
 
+
+
 // let delRow = document.getElementById("deleteRow")
 // console.log(delRow)
 // //oldRow = document.getElementsByClassName("row")
@@ -125,11 +127,7 @@ let rowButton = document.getElementById("roww")
 //column.addEventListener("click",()=>{ addColumn()})
 
 let rowButton = document.getElementById("roww")
-//console.log(rowButton)
-//let rectArray = []
-//let x = 75
-//let first = document.getElementById("myCanvas");
-//start = first.getContext("2d");
+
 rowButton.addEventListener("click",()=>{
     addRow()})
 let colNum = 3;
@@ -138,17 +136,17 @@ let selectedColor = "red";
 let mouseDown = false;
 
 const addRow = () => {
-  const content = document.getElementsByTagName("table")[0]
-  //const content = document.getElementsByTagName("table")[0]
+  let content = document.getElementsByTagName("table")[0]
+
   const row = document.createElement("tr");
-  //let row;
-    //row = document.createElement("tr")
+  
   //row.className = "row";
   for (let i = 0; i < colNum; i++) {
     let cell = document.createElement("td")
     row.appendChild(cell)
+    //row.style.backgroundColor === "white"
     //const col = document.createElement("tr");
-    //cell.className = "col-sm";
+   // cell.className = "col-sm";
     cell.addEventListener("click", (event) => {
       console.log("hey");
       event.preventDefault();
@@ -178,18 +176,27 @@ const addRow = () => {
   rowNum++;
   //return row
 };
-
+let color = document.getElementById('fillEmpty')
+color.addEventListener("click",()=>{setAllColors()})
 const setAllColors = () => {
-  const cols = document.getElementsByClassName("box");
-  for (let i = 0; i < cols.length; i++) {
-    if (cols[i].style.backgroundColor === "white") {
-      cols[i].style.backgroundColor = selectedColor;
+  let colss = document.getElementsByTagName("td");
+
+  for (let i = 0; i < colss.length; i++) {
+    
+    if (colss[i].style.backgroundColor!= selectedColor) {
+      
+      colss[i].style.backgroundColor = selectedColor;
     }
   }
 };
+//let rowButton = document.getElementById("roww")
 
-const setAll = () => {
-  const cols = document.getElementsByClassName("box");
+//rowButton.addEventListener("click",()=>{
+   // addRow()})
+   let all = document.getElementById('fillAll')
+   all.addEventListener("click",()=>{setAll()})
+const setAll = () => { 
+  const cols = document.getElementsByTagName("td");
   for (let i = 0; i < cols.length; i++) {
     cols[i].style.backgroundColor = selectedColor;
   }
@@ -198,7 +205,7 @@ let columns = document.getElementById("column")
 columns.addEventListener("click",()=>{
     addCol()})
 const addCol = () => {
-    const content = document.getElementsByTagName("table")[0]
+    let content = document.getElementsByTagName("table")[0]
     //const rows = document.createElement("tr");
   const rows = document.getElementsByTagName("tr");
   for (let i = 0; i < rows.length; i++) {
@@ -208,12 +215,12 @@ const addCol = () => {
     cell.addEventListener("click", (event) => {
       console.log("hey");
       event.preventDefault();
-      col.style.backgroundColor = selectedColor;
+      cell.style.backgroundColor = selectedColor;
     });
     cell.addEventListener("mousedown", (event) => {
       event.preventDefault();
       mouseDown = true;
-      col.style.backgroundColor = selectedColor;
+      cell.style.backgroundColor = selectedColor;
     });
     cell.addEventListener("mouseup", (event) => {
       event.preventDefault();
@@ -231,18 +238,20 @@ const addCol = () => {
   }
   colNum++;
 };
-//let delCol = document.getElementById("deleteColumn")
-//delCol.addEventListener("click",()=>{
- //   removeCol()})
-const removeCol = () => {
+let delCol = document.getElementById("deleteColumn")
+
+delCol.addEventListener("click",()=>{
+   removeCol()}) 
+let removeCol = () => {
   if (colNum === 0) {
     alert("No more columns to remove");
   } else {
-    const rows = document.getElementsByClassName("row");
-    for (let i = 0; i < rows.length; i++) {
-      rows[i].lastElementChild.remove();
+    const cells =  document.getElementsByTagName("td")
+    console.log(cells)
+    for (let i = 0; i < cells.length; i++) {
+      cells[i].remove();
     }
-    colNum--;
+    cells--;
     if (colNum === 0) {
       rowNum = 1;
     }
@@ -255,7 +264,7 @@ const removeRow = () => {
   if (rowNum === 0) {
     alert("No more rows to remove");
   } else {
-    const content = document.getElementsByTagName("table")[0]
+    let content = document.getElementsByTagName("table")[0]
     console.log(content)
     content.removeChild(content.lastElementChild);
     rowNum--;
@@ -270,7 +279,7 @@ const selectColor = (colorVal) => {
 };
 
 const init = () => {
-  const cols = document.getElementsByClassName("box");
+  const cols = document.getElementsByTagName("td");
   for (let i = 0; i < cols.length; i++) {
     cols[i].style.backgroundColor = "white";
     cols[i].addEventListener("click", (event) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function SearchField() {
+export default function SearchField(props) {
     return (
         <div>
             Wow
