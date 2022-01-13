@@ -1,10 +1,17 @@
 td {
   background-color: white;
-
+  resize: both;
+  overflow: auto;
   width: 20px;
   height: 20px;
   border-style: solid;
   border-width: medium;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+#resize {
+  resize: both;
+  overflow: auto;
 }
 #fillAll {
   /*color: red;*/
@@ -16,18 +23,6 @@ td {
   /*color: red;*/
   position: absolute;
   top: 830px;
-}
-
-.flex-container {
-  display: flex;
-}
-.everything {
-  position: absolute;
-  top: 100%;
-}
-.container {
-  position: relative;
-  padding: 100px 200px 28px 50px;
 }
 
 .buttons {

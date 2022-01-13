@@ -140,7 +140,7 @@ const addRow = () => {
 
   const row = document.createElement("tr");
   
-  //row.className = "row";
+  row.tagName = "td";
   for (let i = 0; i < colNum; i++) {
     let cell = document.createElement("td")
     row.appendChild(cell)
@@ -183,7 +183,7 @@ const setAllColors = () => {
 
   for (let i = 0; i < colss.length; i++) {
     
-    if (colss[i].style.backgroundColor!= selectedColor) {
+    if (colss[i].style.backgroundColor != selectedColor) {
       
       colss[i].style.backgroundColor = selectedColor;
     }
@@ -247,8 +247,11 @@ let removeCol = () => {
     alert("No more columns to remove");
   } else {
     const cells =  document.getElementsByTagName("td")
+    const coll = document.getElementsByTagName("tr")
     console.log(cells)
-    for (let i = 0; i < cells.length; i++) {
+    let last = cells.length/coll.length;
+    
+    for (let i = 0; i < last; i++) {
       cells[i].remove();
     }
     cells--;
