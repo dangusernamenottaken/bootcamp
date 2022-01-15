@@ -142,6 +142,7 @@ const addRow = () => {
   
   row.tagName = "td";
   for (let i = 0; i < colNum; i++) {
+  
     let cell = document.createElement("td")
     row.appendChild(cell)
     //row.style.backgroundColor === "white"
@@ -183,9 +184,10 @@ const setAllColors = () => {
 
   for (let i = 0; i < colss.length; i++) {
     
-    if (colss[i].style.backgroundColor != selectedColor) {
+    if (colss[i].style.backgroundColor === 'white') {
       
       colss[i].style.backgroundColor = selectedColor;
+      console.log(colss[i].style.backgroundColor)
     }
   }
 };
@@ -242,19 +244,22 @@ let delCol = document.getElementById("deleteColumn")
 
 delCol.addEventListener("click",()=>{
    removeCol()}) 
-let removeCol = () => {
+const removeCol = () => {
   if (colNum === 0) {
     alert("No more columns to remove");
   } else {
-    const cells =  document.getElementsByTagName("td")
-    const coll = document.getElementsByTagName("tr")
-    console.log(cells)
+    // if cells.length is certain number change things that is where it messes up
+    let cells =  document.getElementsByTagName("td")
+    let coll = document.getElementsByTagName("tr")
+    //console.log(cells)
     let last = cells.length/coll.length;
     
-    for (let i = 0; i < last; i++) {
+    for (let i = coll.length; i < cells.length; i+=last){
+      console.log(coll.length)
       cells[i].remove();
+      coll.length=coll.length-1
     }
-    cells--;
+    //cells--;
     if (colNum === 0) {
       rowNum = 1;
     }
@@ -268,7 +273,7 @@ const removeRow = () => {
     alert("No more rows to remove");
   } else {
     let content = document.getElementsByTagName("table")[0]
-    console.log(content)
+   
     content.removeChild(content.lastElementChild);
     rowNum--;
     if (rowNum === 0) {
@@ -279,10 +284,37 @@ const removeRow = () => {
 
 const selectColor = (colorVal) => {
   selectedColor = colorVal;
-};
 
+};
+let w = document.getElementById("w")
+w.addEventListener("change",(event)=>{
+
+  selectedColor = event.target.value
+
+}
+);
+
+let y = document.getElementById("y")
+y.addEventListener("change",(event)=>{
+ 
+  selectedColor = event.target.value
+
+}
+);
+
+let z = document.getElementById("z")
+z.addEventListener("change",(event)=>{
+  
+  selectedColor = event.target.value
+})
+
+let q = document.getElementById("q")
+q.addEventListener("change",(event)=>{
+
+  selectedColor = event.target.value
+})
 const init = () => {
-  const cols = document.getElementsByIdName("bob");
+  let cols = document.getElementsByTagName("td")
  
   for (let i = 0; i < cols.length; i++) {
     cols[i].style.backgroundColor = "white";
