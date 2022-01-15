@@ -9,7 +9,7 @@ const [zipCode,setZipCode] = useState("")
   const [list,setList] = useState([])
   const [loading,setLoad] = useState(true)
   const handleChange = (event) => {
-    
+               event.preventDefault()
              setZipCode(event.target.value)
              console.log(zipCode)
 
@@ -56,7 +56,7 @@ const [zipCode,setZipCode] = useState("")
   <input type="submit" value="Submit" />
 </form>
       <div id = "wow">
-      
+      <SearchField handleChange = {handleChange} />
       </div>
       </header>
     </div>
