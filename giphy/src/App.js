@@ -1,7 +1,8 @@
 import "./App.css"
 import React,{useState,useEffect} from 'react';
-//import SearchField from "./SearchField"
-//import GifCard_Component from "./GifCard_Component";
+
+import SearchField from "./SearchField"
+import GifCard_Component from "./GifCard_Component";
 
 function App() {
 const [zipCode,setZipCode] = useState("")
