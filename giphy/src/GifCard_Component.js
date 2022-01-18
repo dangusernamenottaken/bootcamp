@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 
 export default function GifCard_Component(props) {
     return (
-        <div>
+        <Fragment>
             
-        </div>
+            <img src = "https://media.giphy.com/media/26n6WywJyh39n1pBu/giphy.gif" alt="pic"/>
+        </Fragment>
+
     )
 }

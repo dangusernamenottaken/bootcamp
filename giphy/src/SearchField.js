@@ -1,10 +1,24 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 
 export default function SearchField(props) {
     return (
-        <div>
-            Wow
- <input onChange = {props.onChange}  ></input>
-        </div>
+        <Fragment>
+            
+            Search Gifs:
+            
+ 
+ 
+ <input 
+
+ onChange = {props.onChange} 
+
+ 
+  ></input>
+  <button type="submit" 
+  onClick = {props.onClick}
+  
+  >Submit</button> 
+        </Fragment>
+       
     )
 }
