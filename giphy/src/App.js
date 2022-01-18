@@ -19,20 +19,10 @@ const [zipCode,setZipCode] = useState("")
      .json()
      .then((data) => {
      console.log(data) 
-      const wow = document.getElementById("wow")
-      const bob = JSON.stringify(data)
-      const arr = bob.split(",")
-      let string = '"Zipcode":"10016"'
-      if(zipCode===5){
-        console.log(zipCode)
-      }
+    
      // wow.innerText = arr[1]
-      for(let i  = 0; i < arr.length; i++){
-        if(arr[i]===string){
-         // console.log(arr[i])
-          wow.innerText = arr[i]
-        }
-      }
+   
+      
       console.log(arr[1])
      
      })
@@ -50,13 +40,14 @@ const [zipCode,setZipCode] = useState("")
     Search Gifs:
     <input 
           value = {zipCode}
-          placeholder="XXXXX"
+        
           onChange = {handleChange}/>
   </label>
   <input type="submit" value="Submit" />
 </form>
       <div id = "wow">
       <SearchField handleChange = {handleChange} />
+
       </div>
       </header>
     </div>
