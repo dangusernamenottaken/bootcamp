@@ -13,7 +13,8 @@ const [trendingData,setTrendingData] = useState([])
      response
      .json()
      .then((data) => {
-     console.log(data) 
+     console.log("trending",data)
+      setTrendingData(data.data)
     })
      .catch((err) =>{  
        console(err);
@@ -24,29 +25,29 @@ const [trendingData,setTrendingData] = useState([])
   useEffect(()=>{
     getTrendingData();
   },[])
-  const handleChange = (event) => {
-               event.preventDefault()
-             //setZipCode(event.target.value)
-            // console.log(zipCode)
+  // const handleChange = (event) => {
+  //              event.preventDefault()
+  //            //setZipCode(event.target.value)
+  //           // console.log(zipCode)
 
-  }
+  // }
   
-  fetch("http://api.giphy.com/v1/gifs/search?q=SEARCH+TERM+GOES+HERE&api_key=crZ51SXbdB3siSVYVP0djB4JSuM3guA3").then((response)=>{
-     response
-     .json()
-     .then((response) => {
-     console.log("Trending Data",response.data) 
-     setTrendingData(response.data)
+  // fetch("http://api.giphy.com/v1/gifs/search?q=SEARCH+TERM+GOES+HERE&api_key=crZ51SXbdB3siSVYVP0djB4JSuM3guA3").then((response)=>{
+  //    response
+  //    .json()
+  //    .then((response) => {
+  //    console.log("Trending Data",response.data) 
+  //    setTrendingData(response.data)
      
    
       
       
      
-     })
-     .catch((err) =>{  
-       console(err);
-     });
-    });
+  //    })
+  //    .catch((err) =>{  
+  //      console(err);
+  //    });
+  //   });
      
    
   return (
@@ -55,7 +56,7 @@ const [trendingData,setTrendingData] = useState([])
       
       <div id = "wow">
       <SearchField  />
-      <GifCard_Component/>
+       <GifCard_Component trendingData = {trendingData}/> 
 
 
       </div>

@@ -5,7 +5,20 @@ export default function GifCard_Component(props) {
      console.log(trendingData)
     return (
         <div>
-          Wow 
+            {trendingData && trendingData.map((ele,idx)=> {
+               
+                return(
+                   
+                  
+                   
+            <><h2 key = {idx}>
+                <img src = {ele.images.original.url.toString()}></img>
+                </h2>
+                </> 
+                )
+
+            })}
+          <h2>Hello</h2>
         </div>
     )
 }
