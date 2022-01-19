@@ -3,21 +3,22 @@ const express = require("express") //requiring express module
 
 const app = express();
 const cors = require("cors")
-//const pool = require("./db")
+const pool = require("./db")
 //const PORT = 8000;
 
 app.use(cors());
-app.use(express.json());
-// app.post("/pizzas",async (req,res)=>{
-//     try{
-//       //  {"topping":"cheese"}
-// const {topping} = reg.body; 
-// const newTopping = await pool.query("INSERT INTO pizzatable (topping) VALUES ($1) RETURNING *",[topping])
-//   res.json(newTopping.rows[0])
-// }catch(err){
-//         console.error(err.message)
-//     }
-// })
+app.use(express.json()); //req.body
+ app.post("/movies",async(req,res)=>{
+   try{
+      // {"topping":"cheese"}
+//const {topping} = reg.body; 
+//const newTopping = await pool.query("INSERT INTO pizzatable (topping) VALUES ($1) RETURNING *",[topping])
+  //res.json(newTopping.rows[0])
+  console.log(req.body);
+}catch(err){
+        console.error(err.message)
+    }
+})
 // app.get("/pizzas", async (req,res)=>{
 //     try{
 //         const allTopings = await pool.query("SELECT * FROM pizzatable");
