@@ -1,4 +1,4 @@
-CREATE DATABASE pernMovies;
+CREATE DATABASE pernmovies;
 CREATE TABLE movies (
     movie_id SERIAL PRIMARY KEY,
     description VARCHAR(255)

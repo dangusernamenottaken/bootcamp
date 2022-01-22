@@ -5,7 +5,7 @@
     password:"Simple12",
     host: "localhost",
    port: 5432,
-    database: "pernMovies"
+    database: "pernmovies"
     
  });
  module.exports = pool;

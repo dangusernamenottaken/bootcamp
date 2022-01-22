@@ -8,17 +8,73 @@ const pool = require("./db")
 
 app.use(cors());
 app.use(express.json()); //req.body
+//create a movie list
  app.post("/movies",async(req,res)=>{
    try{
       // {"topping":"cheese"}
 //const {topping} = reg.body; 
 //const newTopping = await pool.query("INSERT INTO pizzatable (topping) VALUES ($1) RETURNING *",[topping])
   //res.json(newTopping.rows[0])
-  console.log(req.body);
+  const {description} = req.body;
+  const newMovie = await pool.query("INSERT INTO movies (description) VALUES($1) RETURNING *",[description]);
+  res.json(newMovie.rows[0])
 }catch(err){
         console.error(err.message)
     }
 })
+//get all movies
+app.get("/movies",async(req,res)=>{
+    try{
+     const allMovies = await pool.query
+     ("SELECT * FROM movies")
+     res.json(allMovies.rows)
+    } catch(err){
+        console.error(err.message)
+    }
+})
+//get a specific movie
+app.get("/movies/:id",async (req,res)=>{
+    try{
+        const {id} = req.params
+        const movie = await pool.query("SELECT * FROM movies WHERE movie_id = $1",[id])
+        res.json(movie.rows[0])
+    } catch(err){
+        console.error(err.message);
+    }
+} )
+//update a movie
+app.put("/movies/:id",async (req,res)=>{
+    try{
+    const {id} = req.params
+    const {description} = req.body;
+    const updateMovie = await pool.query("UPDATE movies SET description = $1 WHERE movie_id = $2",
+    [description,id]);
+    res.json("Movies were updated");
+    }
+    catch (err){
+     console.error(err.message)
+
+    }
+})
+// delete a movie
+app.delete("/movies/:id",async (req,res)=>{
+try{
+ 
+     const {id} = req.params;
+     const deleteMovie = await pool.query("DELETE FROM movies WHERE movie_id = $1",
+     [id]);
+  res.json("Movie was deleted")
+ }
+
+
+catch(err){
+    console.error(err.message)
+}
+
+
+
+
+});
 // app.get("/pizzas", async (req,res)=>{
 //     try{
 //         const allTopings = await pool.query("SELECT * FROM pizzatable");
